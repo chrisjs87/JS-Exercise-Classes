@@ -74,12 +74,6 @@ class Airplane {
       - Give cars ability to `.drive(distance)`. The distance driven:
           + Should cause the `odometer` to go up.
           + Should cause the the `tank` to go down taking `milesPerGallon` into account.
-
-
-
-
-
-
       - A car which runs out of `fuel` while driving can't drive any more distance:
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
@@ -147,9 +141,23 @@ class Airplane {
           + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
           + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
   */
- class Instructor {
+ 
+ class Instructor extends Lambdasian{
+    constructor(obj){
+      super(obj);
+      this.specialty = obj.specialty;
+      this.favLanguage = obj.favLanguage;
+      this.catchPhrase = obj.catchPhrase;
+    }
 
+    demo(subject){
+      return `Today we are learning about ${subject}`;
+    }
+    grade(student, subject){
+      return `${student.name} receives a perfect score on ${subject}`;
+    }
  }
+
   /*
     TASK 5
       - Write a Student class extending Lambdasian.
